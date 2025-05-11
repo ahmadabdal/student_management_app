@@ -23,6 +23,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import { Fonts } from './src/config';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -37,6 +38,7 @@ function Section({children, title}: SectionProps): React.JSX.Element {
           styles.sectionTitle,
           {
             color: isDarkMode ? Colors.white : Colors.black,
+            fontFamily: 'Poppins-Bold'
           },
         ]}>
         {title}
@@ -46,6 +48,7 @@ function Section({children, title}: SectionProps): React.JSX.Element {
           styles.sectionDescription,
           {
             color: isDarkMode ? Colors.light : Colors.dark,
+            fontFamily: Fonts.type.semiBold
           },
         ]}>
         {children}
@@ -90,8 +93,9 @@ function App(): React.JSX.Element {
             paddingBottom: safePadding,
           }}>
           <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
+            {/* Edit <Text style={styles.highlight}>App.tsx</Text> to change this
+            screen and then come back to see your edits. */}
+            <Text style={{fontFamily: 'Poppins-Bold'}}>  screen and then come back to see your edits. </Text>
           </Section>
           <Section title="See Your Changes">
             <ReloadInstructions />
